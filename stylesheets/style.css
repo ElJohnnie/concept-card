@@ -1,0 +1,69 @@
+/* Clear CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Optional: Add more global styles here */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #07182e, #00b7ff, #ff30ff, #07182e);
+}
+
+/* Optional: Add styles for responsive design here */
+
+.card {
+    width: 390px;
+    height: 454px;
+    background: #07182e;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 200px;
+    height: 130%;
+    background-image: linear-gradient(180deg, #00b7ff, #ff30ff);
+    animation: rotBGimg 5s linear infinite;
+    transition: all 2s linear;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background: #07182e;
+    inset: 7px;
+    border-radius: 1em;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
